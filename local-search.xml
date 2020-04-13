@@ -4,25 +4,25 @@
   
   
   <entry>
-    <title>随笔（三）</title>
-    <link href="/posts/8e683586.html"/>
-    <url>/posts/8e683586.html</url>
+    <title>串口、COM口、UART口, TTL、RS-232、RS-485区别详解</title>
+    <link href="/posts/ecb17eb7.html"/>
+    <url>/posts/ecb17eb7.html</url>
     
-    <content type="html"><![CDATA[<p>「如果从明天开始，退休金突然增加１０倍的话，那么就算叫我去信神也可以。」<br>                                              《飞翔篇》第五章＼混乱、错乱、惑乱</p><a id="more"></a><h1 id="随笔（三）"><a href="#随笔（三）" class="headerlink" title="随笔（三）"></a>随笔（三）</h1><hr><ul><li><h2 id="个人牢骚（blablabla）"><a href="#个人牢骚（blablabla）" class="headerlink" title="个人牢骚（blablabla）"></a>个人牢骚（blablabla）</h2>最近的几年感觉变化太大了，不管是周边的人、生活、学业。我感觉我应该算是那种不太喜欢变化的人，但是没办法，各种各样的抉择一件又一件的奔我而来，让我最近真的是有点无可适从了，感觉自己的事情就好像一个毛线团一样，越理越乱，以至于不想理。我开始对微信的个神比的软件产生了一种精神上的厌恶。人际关系，学业，工作，家庭，各种各样的麻烦事情宛如火山爆发一样从那个沙雕软件里冒出来。  </li><li>害，头痛，来杯红茶白兰地歇了。 -2020/04/13 00:51</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>串口、COM口、UART口, TTL、RS-232、RS-485区别详解</p><a id="more"></a><h1 id="串口、COM口、UART口-TTL、RS-232、RS-485区别详解"><a href="#串口、COM口、UART口-TTL、RS-232、RS-485区别详解" class="headerlink" title="串口、COM口、UART口, TTL、RS-232、RS-485区别详解"></a>串口、COM口、UART口, TTL、RS-232、RS-485区别详解</h1><hr><h1 id="串口、COM口、UART口-TTL、RS-232、RS-485区别详解-1"><a href="#串口、COM口、UART口-TTL、RS-232、RS-485区别详解-1" class="headerlink" title="串口、COM口、UART口, TTL、RS-232、RS-485区别详解"></a>串口、COM口、UART口, TTL、RS-232、RS-485区别详解</h1><hr><p>调试时总是会遇到各种各样的接口，各种各样的转换板，似懂非懂的感觉很不爽！</p><h4 id="首先，串口、UART口、COM口、USB口是指的物理接口形式-硬件-。而TTL、RS-232、RS-485是指的电平标准-电信号-。"><a href="#首先，串口、UART口、COM口、USB口是指的物理接口形式-硬件-。而TTL、RS-232、RS-485是指的电平标准-电信号-。" class="headerlink" title="首先，串口、UART口、COM口、USB口是指的物理接口形式(硬件)。而TTL、RS-232、RS-485是指的电平标准(电信号)。"></a>首先，串口、UART口、COM口、USB口是指的物理接口形式(硬件)。而TTL、RS-232、RS-485是指的电平标准(电信号)。</h4><ul><li><p>串口：串口是一个泛称，UART、TTL、RS232、RS485都遵循类似的通信时序协议，因此都被通称为串口。</p></li><li><p>UART接口：通用异步收发器（Universal Asynchronous Receiver/Transmitter)，UART是串口收发的逻辑电路，这部分可以独立成芯片，也可以作为模块嵌入到其他芯片里，单片机、SOC、PC里都会有UART模块。</p></li><li><p>COM口：特指台式计算机或一些电子设备上的D-SUB外形(一种连接器结构，VGA接口的连接器也是D-SUB)的串行通信口，应用了串口通信时序和RS232的逻辑电平。</p></li><li><p>USB口：通用串行总线，和串口完全是两个概念。虽然也是串行方式通信，但由于USB的通信时序和信号电平都和串口完全不同，因此和串口没有任何关系。USB是高速的通信接口，用于PC连接各种外设，U盘、键鼠、移动硬盘、当然也包括“USB转串口”的模块。（USB转串口模块，就是USB接口的UART模块）</p></li></ul><h4 id="TTL，RS232，RS485都是一种逻辑电平的表示方式"><a href="#TTL，RS232，RS485都是一种逻辑电平的表示方式" class="headerlink" title="TTL，RS232，RS485都是一种逻辑电平的表示方式"></a>TTL，RS232，RS485都是一种逻辑电平的表示方式</h4><ul><li><p>TTL：TTL指双极型三极管逻辑电路，市面上很多“USB转TTL”模块，实际上是“USB转TTL电平的串口”模块。这种信号0对应0V，1对应3.3V或者5V。与单片机、SOC的IO电平兼容。不过实际也不一定是TTL电平，因为现在大部分数字逻辑都是CMOS工艺做的，只是沿用了TTL的说法。我们进行串口通信的时候 从单片机直接出来的基本是都 是 TTL 电平。</p></li><li><p>TTL电平：全双工（逻辑1: 2.4V–5V  逻辑0: 0V–0.5V）</p></li></ul><p>1、硬件框图如下，TTL用于两个MCU间通信<br><img src="https://balrog.oss-cn-shenzhen.aliyuncs.com/img/20200413222700.png" srcset="/img/loading.gif" alt="image"><br>2、‘0’和‘1’表示<br><img src="https://balrog.oss-cn-shenzhen.aliyuncs.com/img/20200413222806.png" srcset="/img/loading.gif" alt="image"><br>RS232：是电子工业协会(Electronic Industries Association，EIA) 制定的异步传输标准接口，同时对应着电平标准和通信协议（时序），其电平标准：+3V～+15V对应0，-3V～-15V对应1。rs232 的逻辑电平和TTL 不一样但是协议一样。</p><p>RS-232电平：全双工（逻辑1：-15V–5V 逻辑0：+3V–+15V）</p><p>1、硬件框图如下，TTL用于MCU与PC机之间通信<br><img src="https://balrog.oss-cn-shenzhen.aliyuncs.com/img/20200413222904.png" srcset="/img/loading.gif" alt="image"><br>2、‘0’和‘1’表示<br><img src="https://balrog.oss-cn-shenzhen.aliyuncs.com/img/20200413222946.png" srcset="/img/loading.gif" alt="image"><br>RS485：RS485是一种串口接口标准，为了长距离传输采用差分方式传输，传输的是差分信号，抗干扰能力比RS232强很多。两线压差为-(2<del>6)V表示0，两线压差为+(2</del>6)V表示1</p><p>RS-485：半双工、（逻辑1：+2V–+6V 逻辑0： -6V—2V）这里的电平指AB 两线间的电压差。</p><p>1、硬件框图如下<br><img src="https://balrog.oss-cn-shenzhen.aliyuncs.com/img/20200413223159.png" srcset="/img/loading.gif" alt="image"><br>2、‘0’和‘1’表示<br><img src="https://balrog.oss-cn-shenzhen.aliyuncs.com/img/20200413223201.png" srcset="/img/loading.gif" alt="image"><br>COM口即串行通讯端口，简称串口。这里区别于USB的“通用串行总线”和硬盘的“SATA”。</p><p>一般我们见到的是两种物理标准。D型9针插头，和4针杜邦头两种。</p><p>这是常见的4针串口，在电路板上常见，经常上边还带有杜邦插针。还有时候有第五根针，3.3V电源端。</p><p>由于是预留在电路板上的，协议可以有很多种，要看具体设备。<br><img src="https://balrog.oss-cn-shenzhen.aliyuncs.com/img/20200413223318.png" srcset="/img/loading.gif" alt="image">    </p><h4 id="嵌入式里面说的串口，一般是指UART口，-但是我们经常搞不清楚它和COM口的区别-以及RS232-TTL等关系-实际上UART-COM指的物理接口形式-硬件-而TTL、RS-232是指的电平标准-电信号"><a href="#嵌入式里面说的串口，一般是指UART口，-但是我们经常搞不清楚它和COM口的区别-以及RS232-TTL等关系-实际上UART-COM指的物理接口形式-硬件-而TTL、RS-232是指的电平标准-电信号" class="headerlink" title="嵌入式里面说的串口，一般是指UART口， 但是我们经常搞不清楚它和COM口的区别, 以及RS232, TTL等关系, 实际上UART,COM指的物理接口形式(硬件), 而TTL、RS-232是指的电平标准(电信号)."></a>嵌入式里面说的串口，一般是指UART口， 但是我们经常搞不清楚它和COM口的区别, 以及RS232, TTL等关系, 实际上UART,COM指的物理接口形式(硬件), 而TTL、RS-232是指的电平标准(电信号).</h4><p>UART有4个pin（VCC, GND, RX, TX）, 用的TTL电平, 低电平为0(0V)，高电平为1（3.3V或以上）。<br><img src="https://balrog.oss-cn-shenzhen.aliyuncs.com/img/20200413223319.png" srcset="/img/loading.gif" alt="image"><br>下面这个就是D型9针串口(通俗说法)。在台式电脑后边都可以看到。</p><p>记住，这种接口的协议只有两种：RS-232和RS-485。不会是TTL电平的(除非特殊应用)。</p><p>9针串口的定义可以参考这里：<a href="http://wenku.baidu.com/view/5c170c6925c52cc58bd6be6e.html" target="_blank" rel="noopener">http://wenku.baidu.com/view/5c170c6925c52cc58bd6be6e.html</a></p><p>我们一般只接出RXD TXD两针，外加GND。<br><img src="https://balrog.oss-cn-shenzhen.aliyuncs.com/img/20200413223320.png" srcset="/img/loading.gif" alt="image"><br>下图是个USB转TTL串口的小板，可以用USB扩展出一个串口。芯片为PL2303HX。<br><img src="https://balrog.oss-cn-shenzhen.aliyuncs.com/img/20200413223322.jpg" srcset="/img/loading.gif" alt="image"><br>网上经常混淆各种串口，但是这个确实是可以给STC单片机下载程序的。</p><p>这是另一种，CP2102芯片的，也是USB转TTL串口。据说比PL2303的好，实际使用中没感觉出来。这个小板就多了+3.3V电源端，以适应不同的目标电路。<br><img src="https://balrog.oss-cn-shenzhen.aliyuncs.com/img/20200413223323.jpg" srcset="/img/loading.gif" alt="image"><br>下图为USB转RS-232串口：<br><img src="https://balrog.oss-cn-shenzhen.aliyuncs.com/img/20200413223346.png" srcset="/img/loading.gif" alt="image"></p>]]></content>
     
     
     <categories>
       
-      <category>随笔</category>
+      <category>资料</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>个人</tag>
+      <tag>学习</tag>
       
-      <tag>感悟</tag>
+      <tag>资料</tag>
       
     </tags>
     
@@ -50,6 +50,33 @@
       <tag>学习</tag>
       
       <tag>资料</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>随笔（三）</title>
+    <link href="/posts/8e683586.html"/>
+    <url>/posts/8e683586.html</url>
+    
+    <content type="html"><![CDATA[<p>「如果从明天开始，退休金突然增加１０倍的话，那么就算叫我去信神也可以。」<br>                                              《飞翔篇》第五章＼混乱、错乱、惑乱</p><a id="more"></a><h1 id="随笔（三）"><a href="#随笔（三）" class="headerlink" title="随笔（三）"></a>随笔（三）</h1><hr><ul><li><h2 id="个人牢骚（blablabla）"><a href="#个人牢骚（blablabla）" class="headerlink" title="个人牢骚（blablabla）"></a>个人牢骚（blablabla）</h2>最近的几年感觉变化太大了，不管是周边的人、生活、学业。我感觉我应该算是那种不太喜欢变化的人，但是没办法，各种各样的抉择一件又一件的奔我而来，让我最近真的是有点无可适从了，感觉自己的事情就好像一个毛线团一样，越理越乱，以至于不想理。我开始对微信的个神比的软件产生了一种精神上的厌恶。人际关系，学业，工作，家庭，各种各样的麻烦事情宛如火山爆发一样从那个沙雕软件里冒出来。  </li><li>害，头痛，来杯红茶白兰地歇了。 -2020/04/13 00:51</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>随笔</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>个人</tag>
+      
+      <tag>感悟</tag>
       
     </tags>
     
