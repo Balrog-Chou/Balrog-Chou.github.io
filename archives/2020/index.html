@@ -156,14 +156,14 @@
     </a>
   
     
-    <a href="../../posts/8e683586.html" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">随笔（三）</span>
+    <a href="../../posts/bed34380.html" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">串口：RS233-RS485-RS422几种总线对比</span>
       <span style="float: right;">04-13</span>
     </a>
   
     
-    <a href="../../posts/bed34380.html" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">串口：RS233-RS485-RS422几种总线对比</span>
+    <a href="../../posts/8e683586.html" class="list-group-item list-group-item-action">
+      <span class="archive-post-title">随笔（三）</span>
       <span style="float: right;">04-13</span>
     </a>
   
@@ -278,14 +278,16 @@
 
     
 
-    
-      <!-- 一言 -->
-      <div class="footer-hitokoto">
-        <a id="hitokotoa" href="#" target="_blank" rel="nofollow noopener noreferrer">
-          <span id="hitokoto"></span>
-        </a>
-      </div>
-    
+    <p id="hitokoto">:D 获取中...</p>
+	<script>
+	  fetch('https://v1.hitokoto.cn')
+	    .then(response => response.json())
+	    .then(data => {
+	      const hitokoto = document.getElementById('hitokoto')
+	      hitokoto.innerText = data.hitokoto
+	      })
+	      .catch(console.error)
+	</script>
     
   </div>
 </footer>

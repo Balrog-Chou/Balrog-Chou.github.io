@@ -214,14 +214,14 @@
               <div id="post-nav" class="container">
                   <div class="row">
                     
-                      <a href="8e683586.html" id="post-nav-prev" class="col">
+                      <a href="ecb17eb7.html" id="post-nav-prev" class="col">
                         <i class="fas fa-arrow-left"></i>
-                        <span class="post-nav-title">随笔（三）</span>
+                        <span class="post-nav-title">串口、COM口、UART口, TTL、RS-232、RS-485区别详解</span>
                       </a>
                     
                     
-                      <a href="c37696d4.html" id="post-nav-next" class="col">
-                        <span class="post-nav-title">随笔（二）</span>
+                      <a href="8e683586.html" id="post-nav-next" class="col">
+                        <span class="post-nav-title">随笔（三）</span>
                         <i class="fas fa-arrow-right"></i>
                       </a>
                     
@@ -332,14 +332,16 @@
 
     
 
-    
-      <!-- 一言 -->
-      <div class="footer-hitokoto">
-        <a id="hitokotoa" href="#" target="_blank" rel="nofollow noopener noreferrer">
-          <span id="hitokoto"></span>
-        </a>
-      </div>
-    
+    <p id="hitokoto">:D 获取中...</p>
+	<script>
+	  fetch('https://v1.hitokoto.cn')
+	    .then(response => response.json())
+	    .then(data => {
+	      const hitokoto = document.getElementById('hitokoto')
+	      hitokoto.innerText = data.hitokoto
+	      })
+	      .catch(console.error)
+	</script>
     
   </div>
 </footer>
