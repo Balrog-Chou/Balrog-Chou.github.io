@@ -595,32 +595,9 @@
     
 
     
-      <div class="footer-siteview">
-        
-          <!-- 不蒜子统计PV -->
-          <span id="busuanzi_container_site_pv" style="display:none">
-              被查看<span id="busuanzi_value_site_pv"></span>次
-          </span>
-        
-        
-          <!-- 不蒜子统计UV -->
-          <span id="busuanzi_container_site_uv" style="display:none">
-            |
-            被<span id="busuanzi_value_site_uv"></span>人围观
-          </span>
-        
-      </div>
-    
 
     
 
-    
-      <!-- 一言 -->
-      <div class="footer-hitokoto">
-        <a id="hitokotoa" href="#" target="_blank" rel="nofollow noopener noreferrer">
-          <span id="hitokoto"></span>
-        </a>
-      </div>
     
     
   </div>
@@ -708,30 +685,6 @@
 
 
 
-
-  <script type="text/javascript">
-  /*一言API*/
-  $(document).ready(function(){
-    getHitokoto();
-  });
-  function hitokoto(e) {
-    $("#hitokoto").stop().fadeOut(function() {
-      $("#hitokoto").html(e.hitokoto);
-      var element = document.getElementById('hitokotoa');
-      element.href = "https://hitokoto.cn?id=" + e.id;
-      $("#hitokoto").stop().fadeIn()
-    })
-  };
-  function getHitokoto() {
-    var e = ["a", "b", "c", "d"],
-    t = document.createElement("script");
-    t.type = "text/javascript";
-    t.id = "hitokotoko_js";
-    t.src = "//v1.hitokoto.cn/?encode=json&callback=hitokoto&charset=utf-8&cat=" + e[Math.floor(Math.random() * e.length)];
-    $("#hitokoto").append(t);
-  };
-  setInterval(getHitokoto, 1e4);
-  </script>
 
 
   <script async src="/cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" ></script>
