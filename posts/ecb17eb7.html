@@ -46,7 +46,7 @@
       background-attachment: fixed;
     }
   </style>
-<meta name="generator" content="Hexo 4.2.0"></head>
+<meta name="generator" content="Hexo 5.2.0"></head>
 
 <body class="banner-bg">
   <header style="height: 70vh;">
@@ -185,7 +185,7 @@
 <p>由于是预留在电路板上的，协议可以有很多种，要看具体设备。<br><img src="https://balrog.oss-cn-shenzhen.aliyuncs.com/img/20200413223318.png" srcset="/img/loading.gif" alt="image">    </p>
 <h4 id="嵌入式里面说的串口，一般是指UART口，-但是我们经常搞不清楚它和COM口的区别-以及RS232-TTL等关系-实际上UART-COM指的物理接口形式-硬件-而TTL、RS-232是指的电平标准-电信号"><a href="#嵌入式里面说的串口，一般是指UART口，-但是我们经常搞不清楚它和COM口的区别-以及RS232-TTL等关系-实际上UART-COM指的物理接口形式-硬件-而TTL、RS-232是指的电平标准-电信号" class="headerlink" title="嵌入式里面说的串口，一般是指UART口， 但是我们经常搞不清楚它和COM口的区别, 以及RS232, TTL等关系, 实际上UART,COM指的物理接口形式(硬件), 而TTL、RS-232是指的电平标准(电信号)."></a>嵌入式里面说的串口，一般是指UART口， 但是我们经常搞不清楚它和COM口的区别, 以及RS232, TTL等关系, 实际上UART,COM指的物理接口形式(硬件), 而TTL、RS-232是指的电平标准(电信号).</h4><p>UART有4个pin（VCC, GND, RX, TX）, 用的TTL电平, 低电平为0(0V)，高电平为1（3.3V或以上）。<br><img src="https://balrog.oss-cn-shenzhen.aliyuncs.com/img/20200413223319.png" srcset="/img/loading.gif" alt="image"><br>下面这个就是D型9针串口(通俗说法)。在台式电脑后边都可以看到。</p>
 <p>记住，这种接口的协议只有两种：RS-232和RS-485。不会是TTL电平的(除非特殊应用)。</p>
-<p>9针串口的定义可以参考这里：<a href="http://wenku.baidu.com/view/5c170c6925c52cc58bd6be6e.html" target="_blank" rel="noopener">http://wenku.baidu.com/view/5c170c6925c52cc58bd6be6e.html</a></p>
+<p>9针串口的定义可以参考这里：<a target="_blank" rel="noopener" href="http://wenku.baidu.com/view/5c170c6925c52cc58bd6be6e.html">http://wenku.baidu.com/view/5c170c6925c52cc58bd6be6e.html</a></p>
 <p>我们一般只接出RXD TXD两针，外加GND。<br><img src="https://balrog.oss-cn-shenzhen.aliyuncs.com/img/20200413223320.png" srcset="/img/loading.gif" alt="image"><br>下图是个USB转TTL串口的小板，可以用USB扩展出一个串口。芯片为PL2303HX。<br><img src="https://balrog.oss-cn-shenzhen.aliyuncs.com/img/20200413223322.jpg" srcset="/img/loading.gif" alt="image"><br>网上经常混淆各种串口，但是这个确实是可以给STC单片机下载程序的。</p>
 <p>这是另一种，CP2102芯片的，也是USB转TTL串口。据说比PL2303的好，实际使用中没感觉出来。这个小板就多了+3.3V电源端，以适应不同的目标电路。<br><img src="https://balrog.oss-cn-shenzhen.aliyuncs.com/img/20200413223323.jpg" srcset="/img/loading.gif" alt="image"><br>下图为USB转RS-232串口：<br><img src="https://balrog.oss-cn-shenzhen.aliyuncs.com/img/20200413223346.png" srcset="/img/loading.gif" alt="image"></p>
 
@@ -216,12 +216,17 @@
               <div id="post-note">
                 <div><strong>本文作者：</strong><a href="../index.html">Balrog</a></div>
                 <div><strong>本文链接：</strong><a href="http://balrog.xyz/posts/ecb17eb7.html">http://balrog.xyz/posts/ecb17eb7.html</a></div>
-                <div><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</div>
+                <div><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</div>
               </div>
             
             
               <div id="post-nav" class="container">
                   <div class="row">
+                    
+                      <a href="39452ce3.html" id="post-nav-prev" class="col">
+                        <i class="fas fa-arrow-left"></i>
+                        <span class="post-nav-title">随笔（四）</span>
+                      </a>
                     
                     
                       <a href="bed34380.html" id="post-nav-next" class="col">
